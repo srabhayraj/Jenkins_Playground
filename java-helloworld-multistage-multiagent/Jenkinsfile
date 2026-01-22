@@ -4,13 +4,13 @@ pipeline {
     stages {
         stage('Checkout code') {
             steps {
-                    git branch: 'main', 
-                    url: 'https://github.com/srabhayraj/Jenkins_Playground/java-helloworld-multistage-multiagent.git'
-                    }
+                git branch: 'main', 
+                url: 'https://github.com/srabhayraj/Jenkins_Playground/java-helloworld-multistage-multiagent.git'
                 }
+            }
         stage('Compile Java Program') {
             agent { 
-                docker { image 'node:16-alpine' }
+                docker { image 'maven:3.9.6-eclipse-temurin-17' }
             }
             steps {
                 sh '''
@@ -21,7 +21,7 @@ pipeline {
         }
         stage('Run Java Program') {
             agent { 
-                docker { image 'openjdk:11-jre-slim' }
+                docker { image 'eclipse-temurin:17-jdk' }
             }
             steps {
                 sh 'java -cp build HelloWorld'
