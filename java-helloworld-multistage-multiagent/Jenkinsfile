@@ -16,10 +16,10 @@ pipeline {
                 docker { image 'node:16-alpine' }
             }
             steps {
-                sh '
+                sh '''
                     mkdir -p build
                     javac -d build src/HelloWorld.java
-                '
+                '''
             }
         }
         stage('Run Java Program') {
