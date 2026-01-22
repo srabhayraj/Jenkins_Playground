@@ -1,0 +1,34 @@
+pipeline {
+    agent none
+
+    stages {
+        stage('Checkout code') {
+            agent { 
+                docker { image 'maven:3.8.1-adopt-openjdk-11' }
+            }
+                steps {
+                    git branch: 'main', 
+                    url: 'https://github.com/srabhayraj/Jenkins_Playground/java-helloworld-multistage-multiagent.git'
+                    }
+                }
+        stage('Compile Java Program') {
+            agent { 
+                docker { image 'node:16-alpine' }
+            }
+            steps {
+                sh '
+                    mkdir -p build
+                    javac -d build src/HelloWorld.java
+                '
+            }
+        }
+        stage('Run Java Program') {
+            agent { 
+                docker { image 'openjdk:11-jre-slim' }
+            }
+            steps {
+                sh 'java -cp build HelloWorld'
+            }
+        }
+    }    
+}
