@@ -5,9 +5,10 @@ pipeline {
         stage('Checkout code') {
             agent any
             steps {
-                git branch: 'main', 
-                url: 'https://github.com/srabhayraj/Jenkins_Playground/java-helloworld-multistage-multiagent.git'
-                }
+                echo "Checking out source code"
+                // Jenkins already checked out the repo (Pipeline from SCM)
+                sh 'ls -R'
+            }
             }
         stage('Compile Java Program') {
             agent { 
