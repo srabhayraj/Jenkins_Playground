@@ -3,10 +3,7 @@ pipeline {
 
     stages {
         stage('Checkout code') {
-            agent { 
-                docker { image 'maven:3.8.1-adopt-openjdk-11' }
-            }
-                steps {
+            steps {
                     git branch: 'main', 
                     url: 'https://github.com/srabhayraj/Jenkins_Playground/java-helloworld-multistage-multiagent.git'
                     }
