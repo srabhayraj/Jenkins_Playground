@@ -15,10 +15,12 @@ pipeline {
                 docker { image 'maven:3.9.6-eclipse-temurin-17' }
             }
             steps {
+                dir('java-helloworld-multistage-multiagent') {  
                 sh '''
                     mkdir -p build
                     javac -d build src/HelloWorld.java
                 '''
+                }   
             }
         }
         stage('Run Java Program') {
@@ -26,7 +28,11 @@ pipeline {
                 docker { image 'eclipse-temurin:17-jdk' }
             }
             steps {
-                sh 'java -cp build HelloWorld'
+                dir('java-helloworld-multistage-multiagent') {
+                sh '''
+                    java -cp build HelloWorld
+                '''
+                }
             }
         }
     }    
