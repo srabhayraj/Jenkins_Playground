@@ -3,6 +3,7 @@ pipeline {
 
     stages {
         stage('Checkout code') {
+            agent any
             steps {
                 git branch: 'main', 
                 url: 'https://github.com/srabhayraj/Jenkins_Playground/java-helloworld-multistage-multiagent.git'
