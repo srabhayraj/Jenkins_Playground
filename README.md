@@ -1,2 +1,2 @@
 # Jenkins_Playground
-Jenkins project
+Jenkins project of multistage and multiagent, along with simple and complex projects. 
