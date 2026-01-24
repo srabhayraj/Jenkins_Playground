@@ -26,3 +26,9 @@ Developer pushes code to GitHub → Jenkins triggers pipeline → Build and vali
 - Understood CI/CD fundamentals and pipeline stages.
 - Learned how Jenkins automates repetitive tasks.
 - Gained hands-on experience with pipeline failures and troubleshooting.
+
+## Future Enhancements
+- Add Docker-based build and deployment
+- Integrate automated testing stage
+- Migrate pipeline to GitHub Actions
+
