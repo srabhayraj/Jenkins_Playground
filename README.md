@@ -3,6 +3,8 @@ Jenkins project of multistage and multiagent, along with simple and complex proj
 
 # CI/CD Pipeline – Jenkins & GitHub
 
+🚧 Status: In Progress / Learning Phase
+
 ## Overview
 This project demonstrates a complete CI/CD pipeline built using Jenkins to automate build, test, and deployment processes. The objective was to understand how code changes move from source control to deployment in a controlled and repeatable manner.
 
