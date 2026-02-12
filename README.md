@@ -30,7 +30,7 @@ Developer pushes code to GitHub → Jenkins triggers pipeline → Build and vali
 - Gained hands-on experience with pipeline failures and troubleshooting.
 
 ## Future Enhancements
-- Add Docker-based build and deployment
-- Integrate automated testing stage
-- Migrate pipeline to GitHub Actions
+- Add Docker-based build and deployment.
+- Integrate automated testing stage.
+- Migrate pipeline to GitHub Actions.
 
